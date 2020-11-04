@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka One", cursive;
+  color: #fff;
+}
+
+.mainContainer {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: #196d9a;
+  transition: all 0.3s;
+}
+
+#title {
+  padding-top: 25px;
+  font-size: 30px;
+  text-shadow: 0 0 18px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.incognit-color {
+  padding-top: 20px;
+  font-size: 25px;
+  text-shadow: 0 0 18px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.actions {
+  width: 100%;
+  height: 50px;
+  background: #196d9a;
+  transition: all 0.3s;
+}
+
+.buttons {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.opportunities {
+  text-align: center;
+  align-self: center;
+  text-shadow: 0 0 18px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.buttonL,
+.buttonR {
+  padding-top: 7px;
+}
+
+.button {
+  padding: 8px;
+  font-size: 12px;
+  background: #3ac23b;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  -webkit-box-shadow: 0px 0px 46px -4px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 0px 0px 46px -4px rgba(0, 0, 0, 0.85);
+  box-shadow: 0px 0px 46px -4px rgba(0, 0, 0, 0.85);
+  letter-spacing: 2px;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.left:hover {
+  background-color: cadetblue;
+}
+
+.buttonR button:nth-child(1) {
+  background: #3ac2bd;
+}
+
+.buttonR button:nth-child(2) {
+  background: #c23a3a;
+}
+
+.table-game {
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.square {
+  display: none;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+  background: #000;
+  border-radius: 20px;
+  transition: all 0.3s;
+  -webkit-box-shadow: 0px 0px 46px -4px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 0px 0px 46px -4px rgba(0, 0, 0, 0.85);
+  box-shadow: 0px 0px 46px -4px rgba(0, 0, 0, 0.85);
+}
+
+#colorExample {
+  color: red;
+}
+
+#otherExample {
+  color: rgb(255, 192, 203);
+}
+
+.instructions {
+  width: 100%;
+  height: 600px;
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.instructions h3 {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+
+.intruction {
+  width: 80%;
+  padding: 15px 0;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 430px) {
+  #title {
+    font-size: 40px;
+  }
+
+  .button {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 550px) {
+  .square {
+    width: 30%;
+    height: 0;
+    padding-bottom: 30%;
+  }
+
+  .instructions h3{
+    width: 60%;
+  }
+}
+
+@media (min-width: 700px) {
+  .actions {
+    height: 60px;
+  }
+
+  .table-game {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .opportunities {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 900px) {
+  .incognit-color,
+  #message {
+    font-size: 35px;
+  }
+  .opportunities {
+    font-size: 26px;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+
+  .table-game {
+    width: 60%;
+  }
+
+  .instructions h3{
+    width: 40%;
+  }
+
+  .intruction {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .buttons {
+    width: 45%;
+  }
+
+  .table-game {
+    width: 50%;
+  }
+
+  .buttonL,
+  .buttonR {
+    padding-top: 0;
+  }
+
+  .button {
+    padding: 15px;
+  }
+
+  .instructions h3{
+    width: 20%;
+  }
+
+  .intruction {
+    height: 80px;
+    font-size: 26px;
+  }
+}

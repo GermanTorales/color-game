@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styleResponsive.css" />
+    <title>Color Game</title>
+  </head>
+  <body>
+    <div class="mainContainer bg-dark">
+      <div class="header">
+        <h1 id="title">COLOR GAME</h1>
+        <p class="incognit-color" id="incognitColor"></p>
+      </div>
+      <div class="actions">
+        <div class="buttons">
+          <div class="buttonL">
+            <button class="button left" id="newGame">NUEVOS COLORES</button>
+          </div>
+          <div class="opportunities"></div>
+          <div class="buttonR">
+            <button class="button easy">FACIL</button>
+            <button class="button hard">DIFICIL</button>
+          </div>
+        </div>
+      </div>
+      <div class="table-game">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+
+      <div class="instructions">
+        <h3>Instrucciones</h3>
+
+        <div class="intruction">
+          En la parte de arriba hay un codigo de color en RGB (red, green,
+          blue). Tu objetivo es adivinar cual de los colores de abajo
+          corresponde a ese codigo
+        </div>
+        <div class="intruction">
+          Los numeros pueden ir de 0 (menor cantidad de ese color) hasta el 255
+          (mayor cantidad de ese color)
+        </div>
+        <div class="intruction">
+          Hay dos modos, facil y dificil. <br />
+          En facil solo se muestran 3 colores y tienes 2 oportunidades de
+          adivinar. <br />
+          En dificil se muestran 6 colores y tienes 5 oportunidades de adivinar
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-sm-4">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <p class="card-text">
+                En la parte de arriba hay un codigo de color en RGB (red, green,
+                blue). Tu objetivo es adivinar cual de los colores de abajo
+                corresponde a ese codigo
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <p class="card-text">
+                Los numeros pueden ir de 0 (menor cantidad de ese color) hasta
+                el 255 (mayor cantidad de ese color)
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <p class="card-text">
+                Hay dos modos, facil y dificil. <br />
+                En facil solo se muestran 3 colores y tienes 2 oportunidades de
+                adivinar. <br />
+                En dificil se muestran 6 colores y tienes 5 oportunidades de
+                adivinar
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- WInner Modal -->
+    <div
+      class="modal fade winModal"
+      id="centerModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">
+              Felicidades!
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Adivinaste cual era el color correcto! <br /><br />
+            Quieres volver a jugar?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              No
+            </button>
+            <button type="button" class="btn btn-primary winBtn">Si</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin WInner Modal -->
+
+    <!-- Loser Modal -->
+    <div
+      class="modal fade loserModal"
+      id="centerModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">
+              Que desgracia!
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Perdiste, no pudiste adivinar el color<br /><br />
+
+            Quieres volver a intentarlo?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              No
+            </button>
+            <button type="button" class="btn btn-primary loserBtn">Si</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Loser Modal -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <script src="index.js"></script> -->
+    <script src="main.js"></script>
+  </body>
+</html>
